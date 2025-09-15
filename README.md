@@ -38,7 +38,7 @@ npm install option-pricing
 import { Option } from "option-pricing";
 
 const option = new Option({
-  style: "american",      // "european" or "american"
+  style: "american",      // "american"
   type: "call",           // "call" or "put"
   initialSpotPrice: 100,  // S₀
   strikePrice: 105,       // K
@@ -60,12 +60,12 @@ option.price("monte-carlo-simulation", { simulations: 10000 });
 
 ## Methods
 
-Binomial Tree
+### Binomial Tree
 	•	Identifiers: "bt", "binomial-tree"
 	•	Parameters:
 	•	timeSteps (integer > 0)
 
-Monte Carlo Simulation
+### Monte Carlo Simulation
 	•	Identifiers: "mcs", "monte-carlo-simulation"
 	•	Parameters:
 	•	simulations — number of simulated paths (> 0)
@@ -122,5 +122,3 @@ console.log(opt.price("mcs", { ...common, prngName: "jsf32" }));
 	•	Cox, Ross & Rubinstein — Option Pricing: A Simplified Approach.
 	•	Boyle — Options: A Monte Carlo Approach.
 	•	Longstaff & Schwartz — Valuing American Options by Simulation.
-
-|oai:code-citation|
