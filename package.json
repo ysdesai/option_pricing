@@ -1,0 +1,46 @@
+{
+  "name": "option-pricing",
+  "version": "2.1.0",
+  "description": "Analytical (Black-Scholes) and numerical (binomial tree, Monte Carlo simulation) option pricing calculator supporting different payoff styles (European and American).",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "webpack",
+    "commit": "npm run precommit && git add -A && git commit -m ",
+    "lint": "./node_modules/.bin/eslint ./src/**/*.js ./test/**/*.js",
+    "lint-fix": "./node_modules/.bin/eslint ./src/**/*.js ./test/**/*.js --fix",
+    "precommit": "npm run lint && npm run test",
+    "prepublishOnly": "node check-version.cjs && npm run lint && npm run test && npm run build",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest ./test",
+    "test-coverage": "NODE_OPTIONS=--experimental-vm-modules jest ./test --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peterrhodesdev/option-pricing.git"
+  },
+  "keywords": [
+    "option",
+    "pricing",
+    "black-scholes",
+    "binomial-tree",
+    "monte-carlo-simulation"
+  ],
+  "author": "Peter Rhodes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/peterrhodesdev/option-pricing/issues"
+  },
+  "homepage": "https://github.com/peterrhodesdev/option-pricing#readme",
+  "devDependencies": {
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.1.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.5.1",
+    "prettier": "^2.6.2",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
+}
